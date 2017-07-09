@@ -1,0 +1,7 @@
+build/
+.gradle/
+TransformWords.ipr
+TransformWords.iws
+gradle/
+gradlew
+gradlew.bat
