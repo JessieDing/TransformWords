@@ -47,7 +47,9 @@ public class Application {
                     sound1 = "[" + items[0] + "]";
 
                     String[] parts = items[1].split(" ");
+                    for (String part:parts){
 
+                    }
                 }
 
                 String result = word + "|" + sound1 + "|" + sound2 + "|" + part1 + "|" + paraphrase1 + "|" + part2 + "|" +
