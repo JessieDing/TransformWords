@@ -14,7 +14,7 @@ public class Application {
             "num.", "int.", "u.", "c.", "pl.");
 
     public static void main(String[] args) throws IOException {
-        File file = new File("/Users/sbyan/Desktop/highschool_error2.txt");
+        File file = new File("/Users/sbyan/Desktop/highschool_new.txt");
         FileReader fileReader = new FileReader(file);
         BufferedReader reader = new BufferedReader(fileReader);
 
@@ -22,17 +22,24 @@ public class Application {
         FileOutputStream outputStream = new FileOutputStream(outFile, true);
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream));
 
-        File errorOutFile = new File("/Users/sbyan/Desktop/highschool_error3.txt");
+        File errorOutFile = new File("/Users/sbyan/Desktop/highschool_error4.txt");
         FileOutputStream errorOutputStream = new FileOutputStream(errorOutFile);
         BufferedWriter errorWriter = new BufferedWriter(new OutputStreamWriter(errorOutputStream));
 
         while (reader.ready()) {
             String line = reader.readLine();
-            getResult(line, writer, errorWriter);
+            getResult1(line, writer, errorWriter);
         }
         reader.close();
         writer.close();
         errorWriter.close();
+    }
+
+    private static void getResult1(String line, BufferedWriter writer, BufferedWriter errorWriter) throws IOException {
+        if (!line.contains("|[")) {
+            errorWriter.write(line);
+            errorWriter.newLine();
+        }
     }
 
     // 给这种情况的解析： repeat [ri'pi:t] vt＆vi 重做；重复；复述 n 重复；反复
